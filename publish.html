@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>发布信息 - 校园失物招领</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 顶部导航 -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>🔎</span>
+            校园失物招领
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">首页</a>
+            <a href="index.html">寻物信息</a>
+            <a href="index.html">招领信息</a>
+            <a href="#">我的发布</a>
+            <a href="publish.html" class="publish-nav">
+                ＋ 发布信息
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- 发布页面 -->
+    <main class="publish-container">
+
+        <div class="publish-header">
+
+            <h1>发布失物信息</h1>
+
+            <p>
+                填写详细信息，让校园里的每一件失物都有机会找到主人。
+            </p>
+
+        </div>
+
+
+        <div class="publish-card">
+
+            <form id="publishForm">
+
+
+                <!-- 信息类型 -->
+                <div class="form-group">
+
+                    <label>
+                        信息类型
+                        <span>*</span>
+                    </label>
+
+                    <div class="type-options">
+
+                        <label class="type-option selected">
+
+                            <input
+                                type="radio"
+                                name="type"
+                                value="寻物"
+                                checked
+                            >
+
+                            <div>
+                                <strong>🔍 我要寻物</strong>
+                                <small>
+                                    我丢失了一件物品
+                                </small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="type-option">
+
+                            <input
+                                type="radio"
+                                name="type"
+                                value="招领"
+                            >
+
+                            <div>
+                                <strong>🎁 我要招领</strong>
+                                <small>
+                                    我捡到了一件物品
+                                </small>
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 物品名称 -->
+                <div class="form-group">
+
+                    <label for="itemName">
+                        物品名称
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="itemName"
+                        placeholder="例如：校园卡、黑色雨伞、无线耳机"
+                    >
+
+                </div>
+
+
+                <!-- 物品类别 -->
+                <div class="form-group">
+
+                    <label for="itemCategory">
+                        物品类别
+                        <span>*</span>
+                    </label>
+
+                    <select id="itemCategory">
+
+                        <option value="">
+                            请选择物品类别
+                        </option>
+
+                        <option value="校园卡">
+                            校园卡
+                        </option>
+
+                        <option value="电子产品">
+                            电子产品
+                        </option>
+
+                        <option value="证件">
+                            证件
+                        </option>
+
+                        <option value="钥匙">
+                            钥匙
+                        </option>
+
+                        <option value="书籍">
+                            书籍
+                        </option>
+
+                        <option value="衣物">
+                            衣物
+                        </option>
+
+                        <option value="其他">
+                            其他
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- 地点 -->
+                <div class="form-group">
+
+                    <label for="itemLocation">
+                        丢失 / 拾取地点
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="itemLocation"
+                        placeholder="例如：图书馆三楼、第一食堂"
+                    >
+
+                </div>
+
+
+                <!-- 时间 -->
+                <div class="form-group">
+
+                    <label for="itemTime">
+                        丢失 / 拾取时间
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="datetime-local"
+                        id="itemTime"
+                    >
+
+                </div>
+
+
+                <!-- 描述 -->
+                <div class="form-group">
+
+                    <label for="itemDescription">
+                        详细描述
+                        <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="itemDescription"
+                        rows="5"
+                        placeholder="请描述物品的颜色、外观、特征等信息..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- 联系方式 -->
+                <div class="form-group">
+
+                    <label for="contact">
+                        联系方式
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contact"
+                        placeholder="例如：QQ 123456789 / 微信号 / 手机号"
+                    >
+
+                </div>
+
+
+                <!-- 按钮 -->
+                <div class="form-actions">
+
+                    <a
+                        href="index.html"
+                        class="cancel-btn"
+                    >
+                        取消
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        发布信息
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/data.js"></script>
+    <script src="js/publish.js"></script>
+
+</body>
+
+</html>

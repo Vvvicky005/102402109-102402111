@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园失物招领</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 顶部导航 -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>🔎</span>
+            校园失物招领
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">首页</a>
+            <a href="index.html">寻物信息</a>
+            <a href="index.html">招领信息</a>
+            <a href="my.html">我的发布</a>
+            <a href="publish.html" class="publish-nav">＋ 发布信息</a>
+        </nav>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- 首页 Banner -->
+        <section class="hero">
+
+            <h1>让每一件失物，都找到归处</h1>
+
+            <p>
+                集中发布校园寻物与招领信息，让寻找变得更加简单。
+            </p>
+
+            <!-- 搜索 -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    placeholder="搜索物品名称，例如：校园卡、钥匙、耳机..."
+                >
+
+                <button>
+                    搜索
+                </button>
+
+            </div>
+
+            <div class="hero-decoration">
+                🎒
+            </div>
+
+        </section>
+
+
+        <!-- 分类 -->
+        <div class="category">
+
+            <button class="active">
+                全部
+            </button>
+
+            <button>
+                寻物
+            </button>
+
+            <button>
+                招领
+            </button>
+
+        </div>
+
+
+        <!-- 最新信息 -->
+        <section>
+
+            <div class="section-title">
+
+                <h2>
+                    最新失物信息
+                </h2>
+
+                <a href="#">
+                    查看全部 →
+                </a>
+
+            </div>
+
+
+            <!-- 卡片由 data.js + app.js 动态渲染 -->
+            <div class="cards"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
