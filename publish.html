@@ -24,7 +24,7 @@
             <a href="index.html">首页</a>
             <a href="index.html">寻物信息</a>
             <a href="index.html">招领信息</a>
-            <a href="#">我的发布</a>
+            <a href="my.html">我的发布</a>
             <a href="publish.html" class="publish-nav">
                 ＋ 发布信息
             </a>
@@ -213,6 +213,28 @@
                         rows="5"
                         placeholder="请描述物品的颜色、外观、特征等信息..."
                     ></textarea>
+
+                </div>
+
+
+                <!-- 上传图片 -->
+                <div class="form-group">
+
+                    <label for="itemImage">
+                        物品图片
+                        <small style="color:#98a2b3;font-weight:normal;">
+                            （可选，建议 ≤500KB）
+                        </small>
+                    </label>
+
+                    <div class="upload-box">
+                        <input
+                            type="file"
+                            id="itemImage"
+                            accept="image/*"
+                        >
+                        <div id="imagePreview" class="image-preview"></div>
+                    </div>
 
                 </div>
 

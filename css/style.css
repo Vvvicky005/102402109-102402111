@@ -181,11 +181,34 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: 0.25s;
     cursor: pointer;
+    position: relative;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* 首页卡片图片 */
+.card-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #f5f7fb;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
 }
 
 .card-top {
@@ -283,6 +306,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
 /* =================================
    发布页面
 ================================= */
@@ -309,9 +333,7 @@ body {
     font-size: 14px;
 }
 
-
 /* 发布卡片 */
-
 .publish-card {
     background: white;
     border-radius: 20px;
@@ -319,9 +341,7 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-
 /* 表单 */
-
 .form-group {
     margin-bottom: 25px;
 }
@@ -339,9 +359,7 @@ body {
     margin-left: 3px;
 }
 
-
 /* 输入框 */
-
 .form-group input[type="text"],
 .form-group input[type="datetime-local"],
 .form-group select,
@@ -368,9 +386,7 @@ body {
     box-shadow: 0 0 0 3px rgba(52, 120, 246, 0.1);
 }
 
-
 /* 类型选择 */
-
 .type-options {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -412,9 +428,7 @@ body {
     color: #98a2b3;
 }
 
-
 /* 底部按钮 */
-
 .form-actions {
     display: flex;
     justify-content: flex-end;
@@ -454,9 +468,7 @@ body {
     background: #2563d8;
 }
 
-
 /* 手机适配 */
-
 @media (max-width: 650px) {
 
     .publish-container {
@@ -481,6 +493,66 @@ body {
         width: 100%;
     }
 }
+
+/* =================================
+   上传图片
+================================= */
+.upload-box {
+    border: 2px dashed #d9dee7;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    background: #fafbfd;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.upload-box:hover {
+    border-color: #3478f6;
+    background: #f8fbff;
+}
+
+.upload-box input[type="file"] {
+    width: 100%;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.image-preview {
+    margin-top: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.image-preview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.remove-img {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #e05252;
+    color: white;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(224, 82, 82, 0.4);
+}
+
+.remove-img:hover {
+    background: #c93a3a;
+}
+
 /* =================================
    详情页
 ================================= */
@@ -596,10 +668,6 @@ body {
     border-radius: 6px;
 }
 
-.card {
-    position: relative;
-}
-
 .empty-tip {
     grid-column: 1 / -1;
     text-align: center;
@@ -610,4 +678,27 @@ body {
 
 .empty-tip a {
     color: #3478f6;
+}
+
+/* =================================
+   详情页图片（完整显示）
+================================= */
+.detail-image {
+    width: 100%;
+    max-height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0 25px;
+    background: #f5f7fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    display: block;
 }

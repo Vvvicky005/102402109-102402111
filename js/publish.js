@@ -23,7 +23,64 @@ typeOptions.forEach(option => {
 });
 
 
+// =================================
+// 图片上传与预览
+// =================================
+
+const imageInput = document.getElementById("itemImage");
+const imagePreview = document.getElementById("imagePreview");
+
+let imageBase64 = "";   // 暂存图片的 Base64 字符串
+
+imageInput.addEventListener("change", function (event) {
+
+    const file = event.target.files[0];
+    if (!file) return;
+
+    // 大小限制 500KB
+    if (file.size > 500 * 1024) {
+        alert("图片太大啦，请选择 500KB 以内的图片！");
+        imageInput.value = "";
+        imagePreview.innerHTML = "";
+        imageBase64 = "";
+        return;
+    }
+
+    // 类型检查
+    if (!file.type.startsWith("image/")) {
+        alert("请选择图片文件！");
+        imageInput.value = "";
+        return;
+    }
+
+    // 用 FileReader 读成 Base64
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        imageBase64 = e.target.result;
+
+        imagePreview.innerHTML = `
+            <img src="${imageBase64}" alt="预览">
+            <button type="button" class="remove-img" id="removeImgBtn">×</button>
+        `;
+
+        // 点击 × 移除图片
+        document.getElementById("removeImgBtn").addEventListener("click", function () {
+            imageBase64 = "";
+            imageInput.value = "";
+            imagePreview.innerHTML = "";
+        });
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+
+// =================================
 // 提交表单
+// =================================
+
 publishForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -91,7 +148,8 @@ publishForm.addEventListener("submit", function (event) {
         location: location,
         time: time,
         description: description,
-        contact: contact
+        contact: contact,
+        image: imageBase64        // ← 加入图片
     });
 
 
